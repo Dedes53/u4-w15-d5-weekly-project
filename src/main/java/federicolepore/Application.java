@@ -30,25 +30,25 @@ public class Application {
         GamesCollection collection = new GamesCollection(gamesList);
 
         //prova dei metodi GamesCollection
-        collection.getGamesList().forEach(games -> System.out.println(games.toString()));
-        System.out.println();
-        collection.addGame(b5);
-        System.out.println();
-        System.out.println(collection.searchById(11125));
-        System.out.println();
-        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
-        System.out.println();
-        collection.searchByPrice(40.0).forEach(g -> System.out.println(g.toString()));
-        System.out.println();
-        collection.searchByPlayers(8).forEach(g -> System.out.println(g.toString()));
-        System.out.println();
-        collection.removeById(11112);
-        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
-        System.out.println();
-        collection.modifyById(11125, b6);
-        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
-        System.out.println();
-        System.out.println(collection.statCollection());
+//        collection.getGamesList().forEach(games -> System.out.println(games.toString()));
+//        System.out.println();
+//        collection.addGame(b5);
+//        System.out.println();
+//        System.out.println(collection.searchById(11125));
+//        System.out.println();
+//        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
+//        System.out.println();
+//        collection.searchByPrice(40.0).forEach(g -> System.out.println(g.toString()));
+//        System.out.println();
+//        collection.searchByPlayers(8).forEach(g -> System.out.println(g.toString()));
+//        System.out.println();
+//        collection.removeById(11112);
+//        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
+//        System.out.println();
+//        collection.modifyById(11125, b6);
+//        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
+//        System.out.println();
+//        System.out.println(collection.statCollection());
 
     }
 }
