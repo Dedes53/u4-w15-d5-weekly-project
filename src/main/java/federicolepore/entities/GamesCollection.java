@@ -36,6 +36,11 @@ public class GamesCollection {
         return null;
     }
 
+    public List<Games> searchByPrice(double price) {
+        // parto da gamesList, filtro i g con un prezzo minore di price, ordino e restituisco la lista
+        return gamesList.stream().filter(g -> g.getPrice() < price).sorted().toList();
+    }
+
 
 }
 
