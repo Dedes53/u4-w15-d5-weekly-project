@@ -41,6 +41,8 @@ public class Application {
         System.out.println();
         collection.searchByPlayers(8).forEach(g -> System.out.println(g.toString()));
         System.out.println();
+        collection.removeGame(v2);
+        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
 
     }
 }
