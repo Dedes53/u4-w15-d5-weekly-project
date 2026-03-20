@@ -16,7 +16,7 @@ public class GamesCollection {
         this.gamesList = new ArrayList<>(games);
     }
 
-    public static void PrintList(List<?> list) {
+    public static void printList(List<?> list) {
         if (list == null) {
             System.out.println("Non stai stampando nessuna lista");
             return;
@@ -61,7 +61,7 @@ public class GamesCollection {
 
     public List<Games> searchByPlayers(int n) {
         return gamesList.stream().
-                filter(g -> (g instanceof BoardGames bg) && bg.getPlayers() <= n)
+                filter(g -> (g instanceof BoardGames bg) && bg.getPlayers() >= n)
                 .toList();
     }
 

@@ -4,10 +4,15 @@ import federicolepore.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Application {
 
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
 
         // games
         //videogames
@@ -49,6 +54,53 @@ public class Application {
 //        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
 //        System.out.println();
 //        System.out.println(collection.statCollection());
+
+        boolean isOn = true;
+        System.out.println("Ecco la tua colezzione di giochi. Dimmi cosa vuoi fare?");
+        while (isOn) {
+            System.out.println(
+                    "Aggiungi -> aggiungi un nuovo elemento alla tua lista\n" +
+                            "Rimuovi -> rimuovi un gioco dalla tua collezione\n" +
+                            "Ricerca Id -> cerca il gioco che desideri fornendo l'id\n" +
+                            "Ricerca prezzo -> vedi tutti i giochi inferiori al prezzo che hai selezionato\n" +
+                            "Ricerca giocatori -> cerca tutti i giochi con cui poter giocare con il tuo numero di amici \n" +
+                            "Aggiorna -> aggiorna un elemento della tua lista\n" +
+                            "Statistiche -> un brevissimo riassunto della tua collezione\n" +
+                            "Esci -> esci dalla tua collezione ");
+
+            String comando = scanner.nextLine().trim().toLowerCase(Locale.ROOT);
+
+            switch (comando) {
+                case "aggiungi":
+                    collection.addGame(b5);
+                    break;
+                case "rimuovi":
+                    collection.removeById(11112);
+                    break;
+                case "ricerca id":
+                    System.out.println(collection.searchById(11124));
+                    break;
+                case "ricerca prezzo":
+                    collection.searchByPrice(40);
+                    break;
+                case "ricerca giocatori":
+                    collection.searchByPlayers(6);
+                    break;
+                case "aggiorna":
+                    collection.modifyById(11125, b6);
+                    break;
+                case "statistiche":
+                    System.out.println(collection.statCollection());
+                    break;
+                case "esci":
+                    isOn = false;
+                    break;
+                default:
+                    System.out.println("Comando non riconosiuto, ti prego di riprovare:");
+            }
+
+        }
+
 
     }
 }
