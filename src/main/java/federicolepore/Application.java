@@ -4,7 +4,6 @@ import federicolepore.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Application {
@@ -65,17 +64,66 @@ public class Application {
                             "Ricerca prezzo -> vedi tutti i giochi inferiori al prezzo che hai selezionato\n" +
                             "Ricerca giocatori -> cerca tutti i giochi con cui poter giocare con il tuo numero di amici \n" +
                             "Aggiorna -> aggiorna un elemento della tua lista\n" +
+                            "Mostra -> mostra tutta la tua collezione di giochi\n" +
                             "Statistiche -> un brevissimo riassunto della tua collezione\n" +
                             "Esci -> esci dalla tua collezione ");
 
-            String comando = scanner.nextLine().trim().toLowerCase(Locale.ROOT);
+            String comando = scanner.nextLine().trim().toLowerCase();
 
             switch (comando) {
                 case "aggiungi":
-                    collection.addGame(b5);
+                    System.out.println("Disponibili da aggiungere sono rimasti b5 o b6, dimmi quale dei due desideri aggiungere?");
+                    String game = scanner.nextLine().trim().toLowerCase();
+                    switch (game) {
+                        case "b5":
+                            collection.addGame(b5);
+                            break;
+                        case "b6":
+                            collection.addGame(b6);
+                            break;
+                        default:
+                            System.out.println("Questo nuovo titolo al momento non può essere aggiunto");
+                    }
                     break;
                 case "rimuovi":
-                    collection.removeById(11112);
+                    System.out.println("Questi sono gli indici disponibili per la rimozione, scegline uno:\n" +
+                            "11111, 11112, 11113, 11115, 11121, 11122, 11123, 11124, 11125");
+                    String i = scanner.nextLine().trim();
+                    switch (i) {
+                        case "11111":
+                            collection.removeById(11111);
+                            break;
+                        case "11112":
+                            collection.removeById(11112);
+                            break;
+                        case "11113":
+                            collection.removeById(11113);
+                            break;
+                        case "11114":
+                            collection.removeById(11114);
+                            break;
+                        case "11115":
+                            collection.removeById(11115);
+                            break;
+                        case "11121":
+                            collection.removeById(11121);
+                            break;
+                        case "11122":
+                            collection.removeById(11122);
+                            break;
+                        case "11123":
+                            collection.removeById(11123);
+                            break;
+                        case "11124":
+                            collection.removeById(11124);
+                            break;
+                        case "11125":
+                            collection.removeById(11125);
+                            break;
+                        default:
+                            System.out.println("L'indice che hai inserito non è valido");
+                            break;
+                    }
                     break;
                 case "ricerca id":
                     System.out.println(collection.searchById(11124));
@@ -89,6 +137,8 @@ public class Application {
                 case "aggiorna":
                     collection.modifyById(11125, b6);
                     break;
+                case "mostra":
+                    collection.getGamesList().forEach(System.out::println);
                 case "statistiche":
                     System.out.println(collection.statCollection());
                     break;
@@ -103,4 +153,6 @@ public class Application {
 
 
     }
+
+
 }
