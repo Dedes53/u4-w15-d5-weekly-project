@@ -13,7 +13,7 @@ public class BoardGames extends Games {
         this.duration = duration;
     }
 
-    
+
     public int getPlayers() {
         return players;
     }
@@ -22,4 +22,11 @@ public class BoardGames extends Games {
         return duration;
     }
 
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", n. giocatori= " + players +
+                ", durata= " + duration + "}";
+    }
 }

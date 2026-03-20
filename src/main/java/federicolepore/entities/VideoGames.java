@@ -15,7 +15,7 @@ public class VideoGames extends Games {
         this.genre = genre;
     }
 
-    
+
     public String getPlatform() {
         return platform;
     }
@@ -26,6 +26,14 @@ public class VideoGames extends Games {
 
     public Genres getGenre() {
         return genre;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", n. giocatori= " + platform +
+                ", durata= " + duration +
+                ", genere= " + genre + "}";
     }
 
 }

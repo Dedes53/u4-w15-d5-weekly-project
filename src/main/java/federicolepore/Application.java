@@ -2,6 +2,7 @@ package federicolepore;
 
 import federicolepore.entities.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -23,9 +24,20 @@ public class Application {
         Games b4 = new BoardGames(11124, "Scythe", 2016, 90.0, Players.SETTE, 115.0);
         Games b5 = new BoardGames(11125, "Munchkin", 2001, 25.0, Players.SEI, 60.0);
 
-        List<Games> gamesList = List.of(v1, v2, v3, v4, v5, b1, b2, b3, b4, b5);
+        List<Games> gamesList = new ArrayList<>(List.of(v1, v2, v3, v4, v5, b1, b2, b3, b4));
 
         GamesCollection collection = new GamesCollection(gamesList);
+
+        //prova dei metodi GamesCollection
+        collection.getGamesList().forEach(games -> System.out.println(games.toString()));
+        System.out.println();
+        collection.addGame(b5);
+        System.out.println();
+        System.out.println(collection.searchById(11125));
+        System.out.println();
+        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
+        System.out.println();
+        collection.searchByPrice(40.0).forEach(g -> System.out.println(g.toString()));
 
     }
 }

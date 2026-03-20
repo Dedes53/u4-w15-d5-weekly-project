@@ -1,6 +1,7 @@
 package federicolepore.entities;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class GamesCollection {
@@ -13,11 +14,15 @@ public class GamesCollection {
         this.gamesList = games;
     }
 
+    public List<Games> getGamesList() {
+        return gamesList;
+    }
+
     //   metodi
     public void addGame(Games game) {
 
         if (game == null) throw new IllegalArgumentException("Devi provare ad aggiungere un gioco, non aria");
-        boolean idIsDifferent = gamesList.stream().anyMatch(g -> g.getId() == game.getId());
+        boolean idIsDifferent = gamesList.stream().noneMatch(g -> g.getId() == game.getId());
 
         if (!idIsDifferent)
             throw new IllegalArgumentException("Nella lista un gioco con id: " + game.getId() + "esiste già.");
@@ -38,7 +43,8 @@ public class GamesCollection {
 
     public List<Games> searchByPrice(double price) {
         // parto da gamesList, filtro i g con un prezzo minore di price, ordino e restituisco la lista
-        return gamesList.stream().filter(g -> g.getPrice() < price).sorted().toList();
+        return gamesList.stream().filter(g -> g.getPrice() < price)
+                .sorted(Comparator.comparingDouble(Games::getPrice)).toList();
     }
 
 

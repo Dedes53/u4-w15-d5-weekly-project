@@ -37,5 +37,12 @@ public abstract class Games {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return getClass() +
+                "{ id=" + id +
+                ", title= " + title +
+                ", anno= " + year +
+                ", prezzo= " + price;
+    }
 }
