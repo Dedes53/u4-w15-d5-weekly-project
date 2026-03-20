@@ -6,5 +6,6 @@ public enum Genres {
     SPORT,
     RPG,
     FANTASY,
-    FPS
+    FPS,
+    PLATFORM,
 }
