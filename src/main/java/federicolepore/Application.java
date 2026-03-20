@@ -23,6 +23,7 @@ public class Application {
         Games b3 = new BoardGames(11123, "Ticket to Ride", 2004, 35.0, Players.CINQUE, 60.0);
         Games b4 = new BoardGames(11124, "Scythe", 2016, 90.0, Players.SETTE, 115.0);
         Games b5 = new BoardGames(11125, "Munchkin", 2001, 25.0, Players.SEI, 60.0);
+        Games b6 = new BoardGames(11125, "Descent", 2001, 170.0, Players.QUATTRO, 2400.0);
 
         List<Games> gamesList = new ArrayList<>(List.of(v1, v2, v3, v4, v5, b1, b2, b3, b4));
 
@@ -41,8 +42,13 @@ public class Application {
         System.out.println();
         collection.searchByPlayers(8).forEach(g -> System.out.println(g.toString()));
         System.out.println();
-        collection.removeGame(v2);
+        collection.removeById(11112);
         collection.getGamesList().forEach(g -> System.out.println(g.toString()));
+        System.out.println();
+        collection.modifyById(11125, b6);
+        collection.getGamesList().forEach(g -> System.out.println(g.toString()));
+        System.out.println();
+        System.out.println(collection.statCollection());
 
     }
 }
