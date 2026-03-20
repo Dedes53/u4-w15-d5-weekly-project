@@ -11,7 +11,7 @@ public class GamesCollection {
 
     //   costruttore
     public GamesCollection(List games) {
-        this.gamesList = games;
+        this.gamesList = new ArrayList<>(games);
     }
 
     public List<Games> getGamesList() {
@@ -47,6 +47,11 @@ public class GamesCollection {
                 .sorted(Comparator.comparingDouble(Games::getPrice)).toList();
     }
 
+    public List<Games> searchByPlayers(int n) {
+        return gamesList.stream().
+                filter(g -> (g instanceof BoardGames bg) && bg.getPlayers() <= n)
+                .toList();
+    }
 
 }
 

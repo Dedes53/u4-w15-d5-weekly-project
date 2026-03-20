@@ -38,6 +38,9 @@ public class Application {
         collection.getGamesList().forEach(g -> System.out.println(g.toString()));
         System.out.println();
         collection.searchByPrice(40.0).forEach(g -> System.out.println(g.toString()));
+        System.out.println();
+        collection.searchByPlayers(8).forEach(g -> System.out.println(g.toString()));
+        System.out.println();
 
     }
 }
